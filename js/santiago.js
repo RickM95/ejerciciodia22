@@ -1,30 +1,15 @@
-function cocinarPedido() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Pizza");
-    }, 2000);
-  });
-}
-
-function comerPedido() {
-  return new Promise((resolve) => {
+async function comerPedido() {
     console.log("Cliente está comiendo...");
-    setTimeout(() => {
-      resolve();
-    }, 2000);
-  });
+    await new Promise(resolve => setTimeout(resolve, 2000));
 }
 
 function pagarCuenta() {
-  console.log("Cuenta pagada");
+    console.log("Cuenta pagada ✅");
 }
 
-async function procesoRestaurante() {
-  const pedido = await cocinarPedido();
-  console.log(`Sirviendo ${pedido} al cliente...`);
-
-  await comerPedido();
-  pagarCuenta();
+async function procesoRestaurante(pedidoCocinado) {
+    console.log(`Sirviendo ${pedidoCocinado} al cliente...`);
+    await comerPedido();
+    pagarCuenta();
 }
-
-export { cocinarPedido };
+export { procesoRestaurante };

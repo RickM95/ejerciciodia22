@@ -12,8 +12,6 @@ function cocinar(comida) {
     if (!tiempo) {
         return Promise.reject(new Error(`No podemos cocinar ${comida}`));
     }
-
-    // Retornar una promesa que se resuelve después del tiempo de cocción
     return new Promise((resolve) => {
         setTimeout(() => {
             console.log(`${comida} lista en ${tiempo/1000} segundos`);
@@ -21,3 +19,5 @@ function cocinar(comida) {
         }, tiempo);
     });
 }
+
+export { cocinar };

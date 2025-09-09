@@ -1,13 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarea</title>
-    <link rel="stylesheet" href="./css/output.css">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/output.css" />
     <script src="./js/main.js" type="module" defer></script>
-</head>
-<body>
-    
-</body>
+    <title>Simulador de Restaurante</title>
+  </head>
+  <body class="bg-amber-100/20 min-h-screen flex items-center justify-center">
+    <main class="max-w-[800px] w-full bg-white/30 p-8 rounded-2xl shadow-lg">
+      <header class="text-center mb-6">
+        <h1 class="text-2xl font-bold flex items-center justify-center gap-2">
+          🍽️ Simulador de Restaurante
+        </h1>
+        <p class="text-gray-600">
+          Demostración práctica de Callbacks, Promesas y Async/Await
+        </p>
+      </header>
+
+      <section class="grid md:grid-cols-2 gap-6">
+        <div class="space-y-4">
+          <div id="pedido-individual" class="p-4 border rounded-xl bg-gray-50">
+            <h2 class="font-semibold mb-1">🍔 Hacer Pedido Individual</h2>
+            <p class="text-sm text-gray-500 mb-3">
+              Demostración de Callback → Promesa → Async/Await
+            </p>
+
+            <label for="nombre" class="block text-sm font-medium mb-1"
+              >Nombre del Cliente:</label
+            >
+            <input
+              id="nombre"
+              type="text"
+              placeholder="Ingresa tu nombre"
+              class="w-full p-2 border rounded mb-3"
+            />
+
+            <label for="comida" class="block text-sm font-medium mb-1"
+              >Selecciona tu comida:</label
+            >
+            <select id="comida" class="w-full p-2 border rounded mb-3">
+              <option>Elige una opción del menú</option>
+              <option value="pizza">Pizza</option>
+              <option value="hamburguesa">Hamburguesa</option>
+              <option value="ensalada">Ensalada</option>
+            </select>
+
+            <button
+              id="btnPedido"
+              class="w-full bg-gray-800 text-white py-2 rounded hover:bg-gray-700"
+            >
+              Hacer Pedido
+            </button>
+          </div>
+
+          <div
+            id="pedido-multiple"
+            class="p-4 border rounded-xl shadow-sm bg-gray-50"
+          >
+            <h2 class="font-semibold mb-1">
+              Desafío Extra: Múltiples Clientes
+            </h2>
+            <p class="text-sm text-gray-500 mb-3">
+              Demostración de Promise.all con pedidos en paralelo
+            </p>
+            <button
+              id="btnMultiple"
+              class="w-full bg-gray-200 hover:bg-gray-300 py-2 rounded"
+            >
+              Procesar 3 Pedidos en Paralelo
+            </button>
+          </div>
+
+          <div
+            id="ordenes"
+            class="p-4 border rounded-xl shadow-sm bg-gray-50 h-[150px] flex flex-col"
+          >
+            <h2 class="font-semibold mb-1">📋 Órdenes en Proceso</h2>
+            <p class="items-center text-sm text-gray-500">
+              No hay órdenes activas
+            </p>
+          </div>
+        </div>
+
+        <!-- derecha -->
+        <div id="log" class="p-4 border rounded-xl shadow-sm bg-gray-50">
+          <h2 class="font-semibold mb-1">📟 Log de Consola</h2>
+          <p class="text-sm text-gray-500 mb-3">
+            Seguimiento en tiempo real del proceso del restaurante
+          </p>
+          <div
+            id="logConsola"
+            class="bg-black text-green-400 font-mono p-3 rounded h-60 overflow-y-auto"
+          >
+            Aqui esta mi imitacion de log.....
+          </div>
+          <button
+            id="btnLimpiar"
+            class="mt-3 w-full bg-red-500 text-white py-2 rounded hover:bg-red-600"
+          >
+            Limpiar Log
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
