@@ -1,6 +1,5 @@
-function cocinar(comida) {
-    console.log(`Cocinando ${comida}...`);
-
+function cocinar(comida, callback) {
+    callback(`Cocinando ${comida}...`, 'text-orange-300');
     const tiempos = {
         'pizza': 3000,
         'hamburguesa': 2000,
@@ -14,7 +13,7 @@ function cocinar(comida) {
     }
     return new Promise((resolve) => {
         setTimeout(() => {
-            console.log(`${comida} lista en ${tiempo/1000} segundos`);
+            callback(`${comida} lista en ${tiempo/1000} segundos`, 'text-orange-300');
             resolve(comida);
         }, tiempo);
     });
