@@ -1,12 +1,10 @@
 const recibirPedido = (cliente, pedido, callback) => {
-    console.log(`${cliente} llegó y pidió: ${pedido}`);
     setTimeout(() => {
         callback(pedido); 
     }, 1000);
 }
 
 const mostrarPedidoRecibido = (pedido) => {
-    console.log(`Pedido recibido: ${pedido}`);
     return pedido; 
 }
 
